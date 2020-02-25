@@ -16,7 +16,7 @@ class TopicAnalysis:
         Preprocess(tid)
 
         # 句法分析
-        # SyntacticAnalysis(tid)
+        SyntacticAnalysis(tid)
 
         # 统计分析
         # EventEvolution(tid)

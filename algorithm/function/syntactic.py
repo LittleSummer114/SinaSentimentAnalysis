@@ -15,6 +15,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 from sklearn.grid_search import GridSearchCV
 from sklearn.externals import joblib
+import os
 
 def _decode_list(data):
     rv = []
@@ -65,8 +66,8 @@ class SyntacticAnalysis:
     def getAllCorLists(self):
         print 'get cor lists'
         # 获取疑问词库
-        self.yiwen_corpus_list = self.getCorList(ur'data\dict\syn\corpus_yiwen.txt')
-        self.yiwen_full_corpus_list = self.getCorList(ur'data\dict\syn\corpus_yiwen_full.txt')
+        self.yiwen_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_yiwen.txt'))
+        self.yiwen_full_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_yiwen_full.txt'))
         # 获取任指连词
         self.cc_corpus_list = self.getCorList(ur'data\dict\syn\corpus_cc.txt')
         # 获取正反疑问词

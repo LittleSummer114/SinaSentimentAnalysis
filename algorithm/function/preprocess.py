@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import os
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -109,7 +110,7 @@ class Preprocess:
     # 读取停词表
     def readStopword(self):
         self.stopword_list = []
-        input_f = open(ur'..\data\dict\stopWord.txt')
+        input_f = open(os.path.abspath('data/dict/stopWord.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.stopword_list.append(temp_sen.strip())
@@ -266,7 +267,7 @@ class Preprocess:
         # 查看哈工大分词存入的文件
         count = 0
         for i in range(0, 30):
-            input_file_name =  ur'..\data\chaifen_ltp\%d.txt' % i
+            input_file_name =  os.path.abspath('data/chaifen_ltp/%d.txt' % i)
             count += transformer.lookFile(
                 input_file= input_file_name
             )
