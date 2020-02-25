@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Introduction</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css//basic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css//introduction.css' %}">
+        <script type="text/javascript" src="{% static 'js/lib/jquery.min.js' %}"></script>
+    </head>
+    <body style="background: rgba(209,238,238,0.3);">
+        <div id="header" class="header">
+            <!-- logo -->
+            <!-- nav -->
+            <div id="navigation" class="navigation">
+                <div id="logo" class="logo">
+                    <a href="{% url 'search_page' %}">
+                        <img src="{% static 'img/logo.png'%}" alt="" class="" height="85">
+<!--                        <img src="/static/img/logo.png" alt="" class="" height="85">-->
+                    </a>
+                </div>
+                <a href="{% url 'search_page' %}" class="nav">
+                检索页面<br>
+                <span class="en">Search</span>
+                </a>
+                <a href="{% url 'category:category_page' %}" class="nav">
+                话题分类<br>
+                <span class="en">Classification</span>
+                </a>
+                <a href="{% url 'introduction_page' %}" class="nav">
+                    系统介绍<br>
+                <span class="en">Introductions</span>
+                </a>
+            </div>
+            <!-- login -->
+        </div>
+        <div class="container">
+            
+            
+            <div class='introPanel'>
+                <div class="TitileWindow">
+                    <img src="{% static 'img/team.png'%}" alt="" class="" height="50">
+                </div>
+                <div class="leftWindow">
+                    <img src="{% static 'img/hdp.jpg'%}" alt="" class="" height="200">
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class="title">
+                        <h1>黄东平</h1>
+                    </div>
+                    <div class="body">
+                        华南理工大学研究生。研究领域为自然语言处理、博弈论。
+                        <li> <a href="http://dblp.uni-trier.de/pers/hd/h/Huang:Dongping">DBLP</a>收录论文7篇</li>
+                        <li>2015年6月到8月，以“荣誉研究助理”身份在香港中文大学参与相关研究</li>
+                        <li>“中国好创意”CCF全国大数据创新大赛“中文句式的句法精准分析”赛题一等奖</li>
+                        <li>2016CCF大数据与计算智能大赛（BDCI）“基于视角的领域情感分析”赛题二等奖</li>
+                        <li>第二届中国大数据技术创新大赛“用户浏览新闻的模式分析及个性化新闻推荐”赛题优秀参赛奖</li>
+                        <li>2015年美国大学生数学建模“Managing Human Capital in Organizations”赛题二等奖</li>
+                    </div>
+                </div>
+            </div>
+            <div class='introPanel'>
+                <div class="leftWindow">
+                    <img src="{% static 'img/ycai.jpg'%}" alt="" class="" height="200">
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class="title">
+                        <h1>蔡毅 教授</h1>
+                    </div>
+                    <div class="body">
+                        蔡毅，博士，华南理工大学软件学院教授。博士毕业于香港中文大学(CUHK)，师从梁浩锋教授。博士毕业后在香港城市大学从事博士后研究工作，师从李青教授。蔡毅教授多年来一直专注于个性化推荐、语义网络、数据挖掘和用户认知建模等方面的应用基础研究，在模糊本体、半监督主题模型、基于标签组合的推荐算法、事件搜索等问题上做出了有创新性的工作。在相关领域重要国际学术期刊、国际学术会议发表论文80余篇，其中 15 篇 SCI 索引期刊论文。相关学术成果被引用200余次，单篇论文被最高引用70次。出版英文学术专著2本。
+                    </div>
+                </div>
+            </div>
+            <div class='introPanel'>
+                <div class="leftWindow">
+                    <img src="{% static 'img/CIKE_logo.jpg'%}" alt="" class="" height="200">
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class="title">
+                        <h1>CIKE(Computational Intelligence and Knowledge Engineering)</h1>
+                    </div>
+                    <div class="body">
+                        CIKE(Computational Intelligence and Knowledge Engineering)实验室为华南理工大学十佳创业创新团队，实验室在蔡毅教授的带领下在IEEE Transactions on Knowledge and Data Engineering、Neural Networks、Decision Support System、CIKM等顶级期刊和会议上发表论文近百篇，获得20多项国际国内学术竞赛奖项，注重产学研的结合，多项研究成果与企业合作进行转化产生经济效益2000多万元。
+                    </div>
+                </div>
+            </div>
+            
+            <div class='relatePanel'>
+                <div class="TitileWindow">
+                    <img src="{% static 'img/related.png'%}" alt="" class="" height="50">
+                </div>
+                <div class="InfoWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class="title">
+                        <h1>事件演变</h1>
+                    </div>
+                    <div class="body">
+                        <li>Dongping Huang, Shuyue Hu, Yi Cai, Huaqing Min: Discovering Event Evolution Graphs Based on News Articles Relationships. ICEBE 2014: 246-251</li>
+                        <li>Yi Cai, Qing Li, Haoran Xie, Tao Wang, Huaqing Min: Event Relationship Analysis for Temporal Event Search. DASFAA (2) 2013: 179-193</li>
+                    </div>
+                    <div class="title">
+                        <h1>方面提取</h1>
+                    </div>
+                    <div class="body">
+                        <li>Tao Wang, Yi Cai, Ho-fung Leung, Raymond Y. K. Lau, Qing Li, Huaqing Min: Product aspect extraction supervised with online domain knowledge. Knowl.-Based Syst. 71: 86-100 (2014)</li>
+                    </div>
+                    <div class="title">
+                        <h1>情感分析</h1>
+                    </div>
+                    <div class="body">
+                        <li>黄东平, 李靖楠, 雷雪，蔡毅（指导老师）: 2016CCF大数据与计算智能大赛（BDCI）“基于视角的领域情感分析”赛题二等奖</li>
+                    </div>
+                    <div class="title">
+                        <h1>句法判断</h1>
+                    </div>
+                    <div class="body">
+                        <li>黄东平, 陈震鸿, 杨楷, 周滋楷，蔡毅（指导老师）: “中国好创意”CCF全国大数据创新大赛“中文句式的句法精准分析”赛题一等奖</li>
+                        <li>Zhenhong Chen, Kai Yang, Yi Cai, Dongping Huang, Ho-fung Leung: A Highly Effective Hybrid Model for Sentence Categorization. DASFAA Workshops 2016: 98-111</li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class = "contact">
+                @CIKE 新闻话题舆情分析系统
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-07-11/095736593.html>,sf,095736593
+comment_url:<200 http://video.sina.com.cn/p/news/c/v/2016-05-03/090065224025.html>,video,
+<200 http://video.sina.com.cn/p/news/c/v/2016-05-03/090065224025.html>			
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-03/092728859.html>,sf,092728859
+comment_url:<200 http://slide.news.sina.com.cn/c/slide_1_29155_98531.html?img=688223>,slide,
+<200 http://slide.news.sina.com.cn/c/slide_1_29155_98531.html?img=688223>			
+comment_url:<200 http://finance.sina.com.cn/china/gncj/2016-05-03/doc-ifxrtzte9888471.shtml>,,doc-ifxrtzte9888471
+<200 http://finance.sina.com.cn/china/gncj/2016-05-03/doc-ifxrtzte9888471.shtml>			doc-ifxrtzte9888471
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-03/093028862.html>,sf,093028862
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-03/095528890.html>,sf,095528890
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-03/100728903.html>,sf,100728903
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-16/095730283.html>,sf,095730283
+comment_url:<200 http://finance.sina.com.cn/stock/e/20160513/130824693744.shtml>,,130824693744
+comment_url:<200 http://slide.finance.sina.com.cn/news/slide_9_53075_420628.html?img=5274109>,slide,
+<200 http://slide.finance.sina.com.cn/news/slide_9_53075_420628.html?img=5274109>			
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-07-05/165136062.html>,sf,165136062
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhi8384061.shtml>,,doc-ifxryhhi8384061
+<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhi8384061.shtml>			doc-ifxryhhi8384061
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689245>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689245>			
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689246>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689246>			
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688949>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688949>			
+comment_url:<200 http://finance.sina.com.cn/stock/t/2016-05-03/doc-ifxruaee5413551.shtml>,,doc-ifxruaee5413551
+<200 http://finance.sina.com.cn/stock/t/2016-05-03/doc-ifxruaee5413551.shtml>			doc-ifxruaee5413551
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98472.html?img=687662>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98472.html?img=687662>			
+comment_url:<200 http://finance.sina.com.cn/review/mspl/2016-05-06/doc-ifxryhhi8421999.shtml>,,doc-ifxryhhi8421999
+<200 http://finance.sina.com.cn/review/mspl/2016-05-06/doc-ifxryhhi8421999.shtml>			doc-ifxryhhi8421999
+comment_url:<200 http://video.sina.com.cn/p/news/w/v/2016-05-04/195065224699.html>,video,
+<200 http://video.sina.com.cn/p/news/w/v/2016-05-04/195065224699.html>			
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688942>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688942>			
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhi8383530.shtml>,,doc-ifxryhhi8383530
+<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhi8383530.shtml>			doc-ifxryhhi8383530
+comment_url:<200 http://finance.sina.com.cn/roll/2016-05-04/doc-ifxruaee5570102.shtml>,,doc-ifxruaee5570102
+<200 http://finance.sina.com.cn/roll/2016-05-04/doc-ifxruaee5570102.shtml>			doc-ifxruaee5570102
+comment_url:<200 http://news.sina.com.cn/o/2016-05-07/doc-ifxryahs0405804.shtml>,,doc-ifxryahs0405804
+<200 http://news.sina.com.cn/o/2016-05-07/doc-ifxryahs0405804.shtml>			doc-ifxryahs0405804
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688950>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688950>			
+comment_url:<200 http://finance.sina.com.cn/china/gncj/2016-05-06/doc-ifxryhhh1687996.shtml>,,doc-ifxryhhh1687996
+<200 http://finance.sina.com.cn/china/gncj/2016-05-06/doc-ifxryhhh1687996.shtml>			doc-ifxryhhh1687996
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-06/101829392.html>,sf,101829392
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhh1651427.shtml>,,doc-ifxryhhh1651427
+<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhh1651427.shtml>			doc-ifxryhhh1651427
+comment_url:<200 http://slide.news.sina.com.cn/z/slide_1_33131_98662.html?img=689273>,slide,
+<200 http://slide.news.sina.com.cn/z/slide_1_33131_98662.html?img=689273>			
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688940>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688940>			
+comment_url:<200 http://video.sina.com.cn/p/news/c/v/2016-05-05/123565224937.html>,video,
+<200 http://video.sina.com.cn/p/news/c/v/2016-05-05/123565224937.html>			
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689244>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689244>			
+comment_url:<200 http://caitong.sina.com.cn/n/ob/2016-05-06/doc-ifxryhhh1642006.shtml>,,doc-ifxryhhh1642006
+<200 http://caitong.sina.com.cn/n/ob/2016-05-06/doc-ifxryhhh1642006.shtml>			doc-ifxryhhh1642006
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-05/094629222.html>,sf,094629222
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688946>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688946>			
+comment_url:<200 http://slide.news.sina.com.cn/z/slide_1_33131_98662.html?img=689272>,slide,
+<200 http://slide.news.sina.com.cn/z/slide_1_33131_98662.html?img=689272>			
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-06/090829337.html>,sf,090829337
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688945>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688945>			
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-05/095229227.html>,sf,095229227
+comment_url:<200 http://finance.sina.com.cn/stock/hyyj/2016-05-04/doc-ifxrtztc3239669.shtml>,,doc-ifxrtztc3239669
+<200 http://finance.sina.com.cn/stock/hyyj/2016-05-04/doc-ifxrtztc3239669.shtml>			doc-ifxrtztc3239669
+comment_url:<200 http://finance.sina.com.cn/chanjing/cyxw/2016-05-05/doc-ifxryhti3568301.shtml>,,doc-ifxryhti3568301
+<200 http://finance.sina.com.cn/chanjing/cyxw/2016-05-05/doc-ifxryhti3568301.shtml>			doc-ifxryhti3568301
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-06/091829341.html>,sf,091829341
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688943>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688943>			
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689252>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689252>			
+comment_url:<200 http://auto.sina.com.cn/mp/hy/2016-05-06/detail-ifxryhti3657999.shtml>,,detail-ifxryhti3657999
+<200 http://auto.sina.com.cn/mp/hy/2016-05-06/detail-ifxryhti3657999.shtml>			detail-ifxryhti3657999
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689250>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689250>			
+comment_url:<200 http://video.sina.com.cn/p/finance/20160504/154965224611.html>,video,
+<200 http://video.sina.com.cn/p/finance/20160504/154965224611.html>			
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhh1599770.shtml>,,doc-ifxryhhh1599770
+<200 http://news.sina.com.cn/c/nd/2016-05-05/doc-ifxryhhh1599770.shtml>			doc-ifxryhhh1599770
+comment_url:<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688944>,slide,
+<200 http://slide.news.sina.com.cn/s/slide_1_2841_98630.html?img=688944>			
+comment_url:<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689251>,slide,
+<200 http://slide.news.sina.com.cn/x/slide_1_64237_98660.html?img=689251>			
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-04/095629076.html>,sf,095629076
+comment_url:<200 http://finance.sina.com.cn/sf/news/2016-05-04/102729111.html>,sf,102729111
+comment_url:<200 http://auto.sina.com.cn/news/hy/2016-05-07/detail-ifxryhhh1730806.shtml>,,detail-ifxryhhh1730806
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-10/doc-ifxryhhh1861955.shtml>,,doc-ifxryhhh1861955
+<200 http://news.sina.com.cn/c/nd/2016-05-10/doc-ifxryhhh1861955.shtml>			doc-ifxryhhh1861955
+comment_url:<200 http://finance.sina.com.cn/zl/stock/20160509/082724670363.shtml>,kj,082724670363
+comment_url:<200 http://news.sina.com.cn/c/nd/2016-05-10/doc-ifxryhhi8610653.shtml>,,doc-ifxryhhi8610653
+<200 http://news.sina.com.cn/c/nd/2016-05-10/doc-ifxryhhi8610653.shtml>			doc-ifxryhhi8610653
+comment_url:<200 http://auto.sina.com.cn/mp/hy/2016-05-11/detail-ifxryahs0675219.shtml>,,detail-ifxryahs0675219
+comment_url:<200 http://video.sina.com.cn/p/finance/20160607/153565245743.html>,video,
+<200 http://video.sina.com.cn/p/finance/20160607/153565245743.html>			

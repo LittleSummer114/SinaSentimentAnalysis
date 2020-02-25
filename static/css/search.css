@@ -1,0 +1,152 @@
+
+/*查询层框架*/
+.container .searchPanel {
+    width: 100%;
+    height: 250px;
+/*    border: 1px solid blue;*/
+}
+
+/*查找框上文字*/
+.searchPanel .infowrap {
+    width: 100%;
+    height: 120px;
+    margin-top: 10px;
+}
+
+/*查找框*/
+.searchPanel .searchwrap {
+    width: 815px;
+    height: 38px;
+    margin: 30px auto 0 auto;
+    border: 1px solid #394b5b;
+}
+/*查找框-标签*/
+.searchPanel .searchwrap .labelwrap {
+    display: block;
+    width: 725px;
+    height: 100%;
+    float: left;
+}
+.searchPanel .searchwrap .labelwrap input {
+    width: 100%;
+    height: 96%;
+    border: none;
+    background: url(../img/search.png) 5px center no-repeat #deebf1;
+    color: #1a252b;
+    text-indent: 2em;
+    font-size: 14px;
+}
+/*查找框-按钮*/
+.searchPanel .searchwrap .btnwrap {
+    display: block;
+    width: 90px;
+    height: 100%;
+    float: left;
+}
+.searchPanel .searchwrap .btnwrap button {
+    width: 90px;
+    height: 100%;
+    float: left;
+    border: none;
+    background: #14b7f4;
+    color: #1a252b;
+    font-family: "Microsoft Yahei";
+    outline: none;
+}
+
+.searchPanel .searchwrap .btnwrap button:hover {
+    color: #fff;
+}
+
+
+
+/*热点话题层框架*/
+.container .hottopicPanel {
+    width: 100%;
+    height: 200px;
+    margin-top: 10px;
+    
+/*    border: 1px dashed #14b7f4;*/
+}
+.hottopicPanel .tab {
+    line-height: 39px;
+    width: 100%;
+    position: relative;
+}
+.hottopicPanel .block {
+    width: 400px;
+    height: 195px;
+    float: left;
+    background: #AEEEEE;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    
+}
+.hottopicPanel .block .head {
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid #394b5b;
+    height: 70px;
+    font-size: 12px;
+}
+
+.head .leftwindow {
+    width: 105px;
+    float: left;
+    margin-right: 5px;
+}
+
+.head .rightwindow {
+    float: left;
+}
+
+.head .rightwindow .name {
+/*    background: #14b7f4;*/
+    font-size: 18px;
+    color: black;
+    padding: 3px 8px;
+    display: block;
+    margin-top: 5px;
+}
+.head .rightwindow .type {
+    background: #14b7f4;
+    color: #1a252b;
+    padding: 6px 8px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.head .rightwindow .status {
+    background: Lime;
+    color: #1a252b;
+    padding: 6px 8px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+.head .rightwindow .date {
+    background: lightgreen;
+    color: #1a252b;
+    padding: 6px 8px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.hottopicPanel .block .body {
+    clear: both;
+    padding: 5px 10px;
+    height: 138px;
+    font-size: 12px;
+    line-height: 17px;
+    color: black;
+    overflow: hidden;
+/*    border-bottom: 1px solid #394b5b;*/
+}
+
+/*热点话题层文字*/
+.hottopicPanel .infowrap {
+    width: 100%;
+    height: 150px;
+}

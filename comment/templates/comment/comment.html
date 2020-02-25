@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Comment</title>
+
+        {% load staticfiles %}
+        <script type="text/javascript" src="{% static 'js/lib/d3.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/lib/d3.layout.cloud.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/lib/jquery.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css//basic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css//comment.css' %}">
+
+        
+<!--
+        <link rel="stylesheet" type="text/css" href="/static/css/commentframe.css">
+        <script type="text/javascript" src="/static/js/lib/d3.min.js"></script>
+        <script type="text/javascript" src="/static/js/lib/jquery.min.js"></script>
+        
+-->
+    </head>
+    <body style="background: rgba(209,238,238,0.3);">
+        <div id="header" class="header">
+            <!-- logo -->
+            <!-- nav -->
+            <div id="navigation" class="navigation">
+                <div id="logo" class="logo">
+                    <a href="{% url 'search_page' %}">
+                        <img src="{% static 'img/logo.png'%}" alt="" class="" height="85">
+<!--                        <img src="/static/img/logo.png" alt="" class="" height="85">-->
+                    </a>
+                </div>
+                <a href="{% url 'search_page' %}" class="nav">
+                检索页面<br>
+                <span class="en">Search</span>
+                </a>
+                <a href="{% url 'category:category_page' %}" class="nav">
+                话题分类<br>
+                <span class="en">Classification</span>
+                </a>
+                <a href="{% url 'introduction_page' %}" class="nav">
+                    系统介绍<br>
+                <span class="en">Introductions</span>
+                </a>
+            </div>
+            <!-- login -->
+        </div>
+        <div class="container">
+            <div class="dis-wrapper">
+                <!-- 基本信息视图 -->
+                <div class="originalInfoPanel">
+                    <div class="leftFrame divBg">
+                        <a class="lt"></a>
+                        <a class="rt"></a>
+                        <a class="lb"></a>
+                        <a class="rb"></a>
+                        <div class="name">
+                            <img src="/static/img/touxiang.jpg" /> {{comment_info.comment_topic_name}}
+                        </div>
+                    </div>
+                    <div class="rightFrame divBg">
+                        <a class="lt"></a>
+                        <a class="rt"></a>
+                        <a class="lb"></a>
+                        <a class="rb"></a>
+                        <div class="title">
+                            <h1>{{comment_info.comment_nick}}</h1>
+                            <p>{{comment_info.comment_news_title}}<a href="{{ comment_info.comment_news_url }}">
+                                    查看原文
+                                </a>
+                            </p>
+
+                        </div>
+                        <div class="body">
+                            {{comment_info.comment_body}}
+                        </div>
+                        <div class="info">
+                            <span>{{comment_info.comment_time}}</span>
+                            <span class="info-right">来自:{{comment_info.comment_area}}</span>
+                            <span class="info-right">点赞数:{{comment_info.comment_against}}</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 句法分析视图 -->
+                <div class = "pannelName"> 
+                    句法分析结果
+                </div>
+                <div class="analysisPanel divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <center>
+                        <div id="parserTree" />
+                    </center>
+                    <script type="text/javascript" src="{% static 'js/parser.js' %}"></script>
+                    <script type="text/javascript">
+                        bindParserTreeData("{{ cid|safe }}")
+                    </script>
+                </div>
+                <!-- 结果视图视图 -->
+                <div class = "pannelName"> 
+                    句意情感分析
+                </div>
+                <div class="resultPanel">
+                    <div class="left divBg">
+                        <a class="lt"></a>
+                        <a class="rt"></a>
+                        <a class="lb"></a>
+                        <a class="rb"></a>
+                        <div class="name">
+                            <p>句法判别:
+                                {% if comment_info.tag == 2 %}
+                                    陈述句
+                                {% elif comment_info.tag == 1 %}
+                                    否定句
+                                {% else %}
+                                    疑问句
+                                {% endif %}
+                            </p>
+                            <p>关键词：
+                                {% for word in keyword_list %}
+                                    {{ word}},
+                                {% empty %}
+                                    没有疑问词或否定词
+                                {% endfor %}
+                            </p>
+                        </div>
+                        <div class="name">
+                            <p>情感倾向:
+                                {% if comment_info.tag == 0 %}
+                                    中立
+                                {% elif comment_info.tag > 0 %}
+                                    正面
+                                {% else %}
+                                    负面
+                                {% endif %}
+                            </p>
+                            <p>情感词：讨厌（正面）；喜欢（正面）</p>
+                        </div>
+                    </div>
+                    <div class="right divBg">
+                        <a class="lt"></a>
+                        <a class="rt"></a>
+                        <a class="lb"></a>
+                        <a class="rb"></a>
+                        <center>
+                            <div id="piechart" />
+                        </center>
+                        <script type="text/javascript" src="{% static 'js/commentpiechart.js' %}"></script>
+                        <script type="text/javascript">
+                            bindPieChartData("{{ cid|safe }}")
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class = "contact">
+                @CIKE 新闻话题舆情分析系统
+            </div>
+        </div>
+    </body>
+</html>

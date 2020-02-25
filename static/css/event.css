@@ -1,0 +1,88 @@
+
+
+/*第一层框架*/
+.container .originalInfoPanel {
+    width: 100%;
+    height: 645px;
+    margin-top: 20px;
+    display: block;
+}
+/*话题基本信息框*/
+.container .originalInfoPanel .leftWindow {
+    width: 400px;
+    height: 630px;
+    float: left;
+    margin-right: 30px;
+}
+
+.container .originalInfoPanel .rightWindow {
+    width: 830px;
+    height: 630px;
+    float: left;
+}
+
+
+/*第二层框架:事件演变层*/
+.container .evolutionPanel {
+    width: 100%;
+    height: 615px;
+    margin-top: 30px;
+    display: block;
+}
+.container .evolutionPanel .mainWindow {
+    height: 570px;
+    width: 1260px;
+    margin-right: 15px;
+    float: left;
+}
+
+
+/*第三层框架:情感图*/
+.container .sentimentPanel {
+    width: 100%;
+    height: 335px;
+    margin-top: 30px;
+    display: block;
+}
+/*第三层:左侧-扇形图图*/
+.container .sentimentPanel .leftWindow {
+    width: 420px;
+    height: 290px;
+    float: left;
+    margin-right: 30px;
+}
+/*第三层:左侧-情感流图*/
+.container .sentimentPanel .rightWindow {
+    width: 810px;
+    height: 290px;
+    float: left;
+}
+
+
+/*第四层框架:话题舆论集合*/
+.container .commentPanel {
+    height: 645px;
+    width: 100%;
+    margin-top: 30px;
+    display: block;
+}
+/*第四层:全局情感-介绍*/
+.container .commentPanel .mainWindow {
+    width: 100%;
+    height: 600px;
+    float: left;
+}
+
+
+/*第五层框架:全体画像刻画*/
+.container .areaPanel {
+    height: 525px;
+    width: 100%;
+    margin-top: 30px;
+    display: block;
+}
+.container .areaPanel .mainWindow {
+    width: 100%;
+    height: 480px;
+    float: left;
+}

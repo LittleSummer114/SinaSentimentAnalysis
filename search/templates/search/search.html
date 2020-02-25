@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Topic Search</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css//basic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css//search.css' %}">
+        <script type="text/javascript" src="{% static 'js/lib/jquery.min.js' %}"></script>
+        
+    </head>
+    <body>
+        <div id="header" class="header">
+            <!-- logo -->
+            <!-- nav -->
+            <div id="navigation" class="navigation">
+                <div id="logo" class="logo">
+                    <a href="{% url 'search_page' %}">
+                        <img src="{% static 'img/logo.png'%}" alt="" class="" height="85">
+<!--                        <img src="/static/img/logo.png" alt="" class="" height="85">-->
+                    </a>
+                </div>
+                <a href="{% url 'search_page' %}" class="nav">
+                检索页面<br>
+                <span class="en">Search</span>
+                </a>
+                <a href="{% url 'category:category_page' %}" class="nav">
+                话题分类<br>
+                <span class="en">Classification</span>
+                </a>
+                <a href="{% url 'introduction_page' %}" class="nav">
+                    系统介绍<br>
+                <span class="en">Introductions</span>
+                </a>
+            </div>
+            <!-- login -->
+        </div>
+        <div class="container">
+            <div class="searchPanel" id="searchframe">
+                <div class="infowrap">
+                    <center>
+<!--                        <img src="{% static 'img/event.png'%}" alt="" class="">-->
+                    <img src="/static/img/searchlogo.png" alt="" class="">
+                    </center>
+                </div>
+                <form action="."   method="POST">
+                    {% csrf_token %}
+                    <div class="searchwrap">
+                        <div class="labelwrap" >
+                            <input type="text" name="search_info" id="search" placeholder="例如：熔断机制" >
+                        </div>
+                        <div class="btnwrap" >
+                            <button type="submit" id="analysis">搜索一下</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="hottopicPanel" id="hottopicframe">
+                <div class="infowrap">
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" height="70">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">魏则西事件</div>
+                                <div class="type">社会</div>
+                                <div class="status">平淡</div>
+                                <div class="date">2016.04.12-2016.10.11</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            魏则西事件是2016年4月至5月间发生在中国的一起牵涉医疗诈欺广告及网络搜寻服务公司未尽企业社会责任的社会事件。受害者魏则西及其家人因在百度推荐的武警北京市总队第二医院接受了未经审批且效果未经确认的治疗方法，导致耽误治疗，最终于2016年4月12日不治去世。
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" width="105">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">熔断机制</div>
+                                <div class="type">财经</div>
+                                <div class="status">结束</div>
+                                <div class="date">2015.11.12-2016.02.30</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            2015年12月4日，上交所、深交所、中金所正式发布指数熔断相关规定，熔断基准指数为沪深300指数，采用5%和7%两档阈值。于2016年1月1日起正式实施，并于2016年1月8日暂停。
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" height="70">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">三星Note7电池爆炸</div>
+                                <div class="type">民生</div>
+                                <div class="status">平淡</div>
+                                <div class="date">2016.08.02-2016.11.21</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            三星近期推出的旗舰机型Galaxy Note 7手机多次出现电池自燃甚至爆炸事故，三星已宣布在全球范围内召回Note 7产品，中国市场的国行版Note 7因电池厂商不同而继续销售。
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" height="70">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">百度竞价排名事件</div>
+                                <div class="type">社会</div>
+                                <div class="status">平淡</div>
+                                <div class="date">2008.11.12-2010.02.30</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            在2008年11月15日和11月16日，中国中央电视台午间新闻栏目《新闻30分》连续两天播出曝光百度竞价排名黑幕。2016年的血友病贴吧被卖事件及一起因轻信竞价排名推荐的莆田系医院导致患滑膜肉瘤病者死亡的事件令百度的竞价排名丑闻再次成为社会焦点。
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" height="70">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">汶川地震</div>
+                                <div class="type">社会</div>
+                                <div class="status">平淡</div>
+                                <div class="date">2008.5.2-2010.02.30</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            汶川大地震，发生于北京时间（UTC+8）2008年5月12日（星期一）14时27分59.5秒，震中位于中国四川省阿坝藏族羌族自治州汶川县映秀镇附近、四川省省会成都市西北偏西方向79千米处。地震烈度可能达到11度。地震波及大半个中国及亚洲多个国家和地区。
+                        </div>
+                    </div>
+                    <div class="block">
+                        <div class="head">
+                            <div class="leftwindow">
+                                <img src="{% static 'img/touxiang.jpg'%}" alt="" class="" height="70">
+                            </div>
+                            <div class="rightwindow">
+                                <div class="name">中东呼吸综合征</div>
+                                <div class="type">社会</div>
+                                <div class="status">平淡</div>
+                                <div class="date">2015.11.12-2016.02.30</div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            中东呼吸系统综合征曾于2012年在中东引起大型爆发。在2015年5月，韩国首尔出现首例境外移入病例。由于该国卫生单位对此疾病不熟悉，至6月，在韩国遭到感染的患者数已经超过百例。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class = "contact">
+                @CIKE 新闻话题舆情分析系统
+            </div>
+        </div>
+    </body>
+</html>

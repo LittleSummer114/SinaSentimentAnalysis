@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Topic Classification</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css//basic.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css//category.css' %}">
+        <script type="text/javascript" src="{% static 'js/lib/jquery.min.js' %}"></script>
+    </head>
+    <body style="background: rgba(209,238,238,0.3);">
+    <body style="background: rgba(209,238,238,0.3);">
+        <div id="header" class="header">
+            <!-- logo -->
+            <!-- nav -->
+            <div id="navigation" class="navigation">
+                <div id="logo" class="logo">
+                    <a href="{% url 'search_page' %}">
+                        <img src="{% static 'img/logo.png'%}" alt="" class="" height="85">
+<!--                        <img src="/static/img/logo.png" alt="" class="" height="85">-->
+                    </a>
+                </div>
+                <a href="{% url 'search_page' %}" class="nav">
+                检索页面<br>
+                <span class="en">Search</span>
+                </a>
+                <a href="{% url 'category:category_page' %}" class="nav">
+                话题分类<br>
+                <span class="en">Classification</span>
+                </a>
+                <a href="{% url 'introduction_page' %}" class="nav">
+                    系统介绍<br>
+                <span class="en">Introductions</span>
+                </a>
+            </div>
+            <!-- login -->
+        </div>
+        <div class="container">
+            <div class = "topicAddPanel">
+                <form action="."   method="POST">
+                    {% csrf_token %}
+                    <div class="searchwrap">
+                        <div class="namewrap" >
+                            <input type="text" name="add_name_info" id="add" placeholder="话题名 例如：魏则西事件" >
+                        </div>
+                        <div class="labelwrap" >
+                            <input type="text" name="add_keywords_info" id="add" placeholder="关键词 例如：魏则西 百度 莆田系" >
+                        </div>
+                        <div class="stratdatewrap" >
+                            <input type="text" name="add_stratdate_info" id="add1" placeholder="起始日期 2016.01.01" >
+                        </div>
+                        <div class="enddatewrap" >
+                            <input type="text" name="add_enddate_info" id="add" placeholder="结束日期 2016.12.32" >
+                        </div>
+                        <div class="selectwrap" >
+                            <select name = "add_topic_type">
+                                <option value ="0">财经</option>
+                                <option value ="1">社会</option>
+                                <option value="2">民生</option>
+                                <option value="3">军事</option>
+                                <option value="4">政治</option>
+                                <option value="5">其他</option>
+                            </select>
+                        </div>
+                        <div class="btnwrap" >
+                            <button type="submit" id="analysis">添加新话题</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class = "topicListPanel">
+                <div class="leftWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class="topicClassification">
+                        <div class="title">
+                            话题分类
+                        </div>
+                        <div class="topicType">
+                            全部
+                        </div>
+                        <div class="topicType">
+                            财经
+                        </div>
+                        <div class="topicType">
+                            社会
+                        </div>
+                        <div class="topicType">
+                            民生
+                        </div>
+                        <div class="topicType">
+                            军事
+                        </div>
+                        <div class="topicType">
+                            政治
+                        </div>
+                        <div class="topicType">
+                            其他
+                        </div>
+                    </div>
+                </div>
+                <div class="rightWindow">
+                    <div class="topicListInfo">
+                        <script type="text/javascript" src="{% static 'js/topiclist.js' %}"></script>
+                            <script type="text/javascript">
+                                getTopicListData();
+                            </script>
+                        <ul id = "topiclist">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class = "contact">
+                @CIKE 新闻话题舆情分析系统
+            </div>
+        </div>
+    </body>
+</html>

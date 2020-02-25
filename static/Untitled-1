@@ -1,0 +1,236 @@
+<!-- 第一层：基本信息 -->
+            <div class="originalInfoPanel" id="originalInfoPanel">
+                <div class="leftWindow divBg">
+                	<a class="lt"></a>
+                	<a class="rt"></a>
+                	<a class="lb"></a>
+                	<a class="rb"></a>
+                    <div class="info">
+                        <div class="topicnameFrame">
+                            <img src="{% static 'img/topic_name.jpg'%}" alt="" class="topicimg">
+                            <div class="topicname">
+                                熔断机制
+                            </div>
+                        </div>
+                        <div class="typeFrame">
+                            话题类型：
+                            <div class="type">
+                                金融
+                            </div>
+                            <div class="type">
+                                民生
+                            </div>
+                        </div>
+                        <div class="situationFrame">
+                            话题趋势：
+                            <div class="situation">
+                                结束状态
+                            </div>
+                        </div>
+                        <div class="topicweightFrame">
+                            <div class = "topicweight">
+                                话题影响力：98
+                            </div>
+                        </div>
+                        <div class = "similartopicFrame">
+                            <div class = "title">类似话题</div>
+                            <li>2015年夏季股灾</li>
+                            <li>李嘉诚撤资中国</li>
+                            <li>央行出台救市办法</li>
+                        </div>
+                    </div>
+                </div>
+                <div class="rightWindow divBg">
+                	<a class="lt"></a>
+                	<a class="rt"></a>
+                	<a class="lb"></a>
+                	<a class="rb"></a>
+                    <div class = "newsinfo">
+                        <div class = "windowName"> 
+                            话题主要事件列表
+                        </div>
+                        <div id="EventInfoWindow">
+                            <div id="EventInfo"></div>
+                        </div>
+                        <div id="EventList">
+                            <ul id="EventUL"></ul>
+                        </div>
+<!--
+                        <script type="text/javascript" src="{% static 'js/newsinfo.js' %}"></script>
+                        <script type="text/javascript">
+                            bindNewsInfo("{{ tid|safe }}");
+                        </script>
+-->
+                    </div>
+                </div>
+            </div>
+            <!-- 第二层：事件演变层 -->
+            <div class="evolutionPanel" id="evolutionPanel">
+                <div class = "pannelName"> 
+                    话题发展脉络
+                </div>
+                <div class="mainWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            事件演变图
+                        </div>
+                        
+                            <link rel="stylesheet" type="text/css" href="{% static 'css//eventevolutiongraph.css' %}">
+                            <div id="EventEvolutionGraph">
+                            </div>
+                            <div id="DayCount"></div>
+                            <div id="TimeScale">
+                                <div id="background"></div>
+                            </div>
+                            <div id="EventEvolutionLegend"></div>
+<!--
+                            <script type="text/javascript" src="{% static 'js/EventEvolution.js' %}"></script>
+                            <script type="text/javascript">
+                                bindEventEvolutionData("{{ tid|safe }}")
+                            </script>
+-->
+                    </div>
+                </div>
+            </div>
+            <!-- 第三层：全局刻画之高频特征 -->
+            <div class="featurePanel" id="featurePanel">
+                <div class = "pannelName"> 
+                    话题热议词深度分析
+                </div>
+                <div class="leftWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div>
+                        <div class = "windowName"> 
+                            话题全局高频词
+                        </div>
+                        <center>
+                            <script type="text/javascript" src="{% static 'js/cloud.js' %}"></script>
+                            <script type="text/javascript">
+                                bindCloudData("{{ tid|safe }}")
+                            </script>
+                            <div id="WordCloud"></div>
+                        </center>
+                    </div>
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            话题正面高频词
+                        </div>
+                        <center>
+                            <div id="PosFeaturesHisto"></div>
+                            <script type="text/javascript" src="{% static 'js/FeaturesHistogram.js' %}"></script>
+                            <script type="text/javascript">
+                                bindPosFeaturesData("{{ tid|safe }}")
+                            </script>
+                        </center>
+                    </div>
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            话题负面高频词
+                        </div>
+                        <center> 
+                            <div id="NegFeaturesHisto"></div>
+                            <script type="text/javascript">
+                                bindNegFeaturesData("{{ tid|safe }}")
+                            </script>
+                        </center>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第五层：话题舆论集合 -->
+            <div class="commentPanel" id="commentPanel">
+                <div class = "pannelName"> 
+                    话题舆论集合
+                </div>
+                <div class="leftWindow divBg">
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            媒体舆论
+                        </div>
+                        <ul class="tab">
+                            <li class="tab-active">热门新闻报导</li>
+                            <li>最新报导</li>
+                            <li>热门社评</li>
+                        </ul>
+                        <div class="content">
+                            <div class="inner">
+                                <ul id = "topnewslist">
+                                </ul>
+                            </div>
+                            <div class="inner" style="display:none">
+                                <ul id = "recentnewsList">
+                                </ul>
+                            </div>
+                            <div class="inner" style="display:none">
+                                <ul id = "bestnewslist">
+                                </ul>
+                            </div>
+                        </div>
+<!--
+                        <script type="text/javascript" src="{% static 'js/newslist.js' %}"></script>
+                        <script type="text/javascript">
+//                            getNewsListData({{ tid|safe }}, "getTopNewsSet", '#topnewslist')
+                            bindNewsEvent("{{ tid|safe }}");
+                        </script>
+-->
+                        
+                    </div>
+                </div>
+                <div class="rightWindow divBg">
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            大众舆情
+                        </div>
+                        <ul class="tab">
+                            <li class="tab-active">最佳评论集合</li>
+                            <li>话题热门评论</li>
+                            <li>质疑声音</li>
+                            <li>微博名人的意见</li>
+                        </ul>
+                        <div class="content">
+                            <div class="inner">
+                                <ul id = "bestcommentlist">
+                                </ul>
+                            </div>
+                            <div class="inner" style="display:none">
+                                <ul id = "topcommentlist">
+                                </ul>
+                            </div>
+                            <div class="inner" style="display:none">
+                                <ul id = "questioncommentlist">
+                                </ul>
+                            </div>
+                            <div class="inner" style="display:none">
+                                <ul id = "famouscommentlist">
+                                </ul>
+                            </div>
+                        </div>
+<!--
+                        <script type="text/javascript" src="{% static 'js/commentlist.js' %}"></script>
+                        <script type="text/javascript">
+                            getCommentListData({{ tid|safe }}, "getBestCommentSet", '#bestcommentlist')
+                            bindCommentEvent("{{ tid|safe }}");
+                        </script>
+-->
+                    </div>
+                </div>
+            </div>

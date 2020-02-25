@@ -1,0 +1,5 @@
+Hostname=localhost
+Hostport=8080
+User=root
+Passwd=1234
+DataBase=newsdemo

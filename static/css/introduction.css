@@ -1,0 +1,123 @@
+/*添加话题框架*/
+.container .introPanel {
+    width: 100%;
+    display: block;
+/*    border: 1px solid black;*/
+}
+
+.introPanel .TitileWindow{
+    width: 100%;
+    height: 50px;
+/*    height: 500px;*/
+    margin-bottom: 30px;
+    float: left;
+    text-align:center;
+}
+
+.introPanel .leftWindow{
+    width: 300px;
+    height: 200px;
+/*    height: 500px;*/
+    margin-bottom: 30px;
+    float: left;
+    text-align:center;
+    
+}
+
+.introPanel .rightWindow{
+    width: 825px;
+    height: 200px;
+    margin-left: 35px;
+    margin-bottom: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+    float: left;
+}
+
+.introPanel .rightWindow .title {
+    color: black;
+    font-size: 14px;
+    width: 100%;
+}
+
+.introPanel .rightWindow .title h1{
+    font-size: 20px;
+    margin:0 0;
+    margin-top: 10px;
+}
+
+.introPanel .rightWindow .title p{
+    font-size: 10px;
+    margin:0 0;
+    margin-top:5px;
+    color:brown;
+}
+
+.introPanel .rightWindow .title a{
+    margin-left: 20px;
+}
+
+.introPanel .rightWindow .body {
+    color: black;
+    font-size: 16px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.originalInfoPanel .rightWindow .info {
+    margin-top:20px;
+    color: black;
+    font-size: 10px;
+}
+
+.originalInfoPanel .rightWindow .info-right{
+    margin-left: 50px;
+    float: right;
+}
+
+
+.container .relatePanel {
+    width: 100%;
+    display: block;
+
+/*    border: 1px solid black;*/
+}
+
+.relatePanel .TitileWindow{
+    width: 100%;
+    height: 50px;
+/*    height: 500px;*/
+    margin-bottom: 30px;
+    float: left;
+    text-align:center;
+}
+
+.relatePanel .InfoWindow{
+    width: 100%;
+/*    height: 500px;*/
+    margin-bottom: 30px;
+    float: left;
+    float: left;
+}
+
+.relatePanel .InfoWindow .title {
+    color: black;
+    font-size: 14px;
+    width: 100%;
+}
+
+.relatePanel .InfoWindow .title h1{
+    font-size: 20px;
+    margin:0 0;
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.relatePanel .InfoWindow .body {
+    color: black;
+    font-size: 16px;
+    width: 100%;
+    padding-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}

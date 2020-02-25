@@ -1,0 +1,183 @@
+/*
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "微软雅黑";
+    color: #4a4a4a;
+}
+*/
+
+#EventEvolutionGraph {
+    position: relative;
+    width: 1030px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+#DayCount {
+    position: relative;
+    width: 1200px;
+    height: 120px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+#TimeScale {
+    position: relative;
+    top: -5px;
+    width: 1200px;
+    height: 20px;
+    margin: 0 auto;
+}
+
+#background {
+    position: absolute;
+    left: 90px;
+    top: 5px;
+    width: 1020px;
+    height: 10px;
+    background: #b5e4fa;
+    border-radius: 5px;
+    z-index: -100;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: none;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    fill: #aaa;
+    stroke: none;
+    font-size: 12px;
+}
+
+.timeAxis path {
+    stroke: #aaa;
+}
+
+.eventNode {
+    fill: #32b2ec;
+    stroke: #fdf864;
+    stroke-width: 2;
+    cursor: pointer;
+}
+
+.eventEdge {
+    fill: none;
+    stroke: #ddd;
+}
+
+.tooltip {
+    position: absolute;
+    font-size: 10px;
+    width: 120px;
+    height: auto;
+    padding: 5px 5px;
+    text-align: center;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.tooltip:before {
+    position: absolute;
+    content: "";
+    left: -18px;
+    top: 10px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #aaa;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.tooltip:after {
+    position: absolute;
+    content: "";
+    left: -15px;
+    top: 10px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #ffffff;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.rect {
+    fill: #b5e4fa;
+    stroke: none;
+    cursor: pointer;
+}
+
+.selectRect {
+    fill: #32b2ec;
+}
+
+.line {
+    stroke: #41db00;
+    stroke-width: 2;
+    fill: none;
+}
+
+.node {
+    stroke: rgba(0, 0, 0, 0.3);
+    stroke-width: 8;
+    fill: #000;
+    opacity: 0;
+}
+
+.selectNode {
+    opacity: 1.0;
+}
+
+.tipLine {
+    stroke: #4a4a4a;
+    stroke-width: 1;
+    fill: none;
+}
+
+.tipBox {
+    position: absolute;
+    width: auto;
+    min-width: 80px;
+    padding: 4px 8px;
+    background: #fff;
+    font-size: 10px;
+    border: 2px solid #aaa;
+    border-radius: 5px;
+}
+
+.tipBox p {    
+    height:20px;
+}
+
+.tipBox:before {
+    position: absolute;
+    content: "";
+    left: -18px;
+    top: 20px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #aaa;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.tipBox:after {
+    position: absolute;
+    content: "";
+    left: -15px;
+    top: 20px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #ffffff;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+}
+
+.startBtn,
+.endBtn {
+    cursor: pointer;
+}

@@ -1,0 +1,137 @@
+/*head*/
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background: rgba(209,238,238,0.3);
+}
+
+.header{
+    width: 100%;
+/*    height: 80px;*/
+    margin: 0px auto;
+    position: relative;
+/*    background: #F5FFFA;*/
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+    background: #D1EEEE;
+}
+.header .logo {
+    position: absolute;
+    left: 60px;
+    top: 15px;
+}
+.header .navigation {
+    width: 1260px;
+    margin: 0 auto;
+    margin-right: 120px;
+    text-align: right;
+}
+.header .navigation .nav {
+    display: inline-block;
+    width: 120px;
+    height: 32px;
+    padding: 5px;
+    margin: 0 47.5px;
+    color: rgb(0,170,255);
+    display: inline-block;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(0,170,255);
+}
+.header .navigation .nav:hover {
+    color: #fff;
+    background: rgb(0,170,255);
+}
+
+/*body*/
+/*container：主框架*/
+.container {
+    min-width: 1260px;
+    width: 1260px;
+    margin: 0 auto;
+    clear: both;
+    font-family: "微软雅黑";
+}
+
+.container .pannelName {
+    margin-bottom: 10px;
+    font-size: 18px;
+    
+    
+/*    border: 1px solid blue;*/
+}
+
+.container .windowName {
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+    text-align: center;
+    color: black;
+}
+
+
+/*脚注*/
+.footer {
+    clear: both;
+    margin-top: 20px;
+    background: #D1EEEE;
+}
+.footer .contact {
+    padding-top: 15px;
+    text-align: center;
+    height: 26px;
+    margin: 0 auto;
+    font-size: 16px;
+}
+
+.footer .contact span {
+    display: inline-block;
+    margin-right: 25px;
+    margin-left: 5px;
+    position: relative;
+    float: left;
+    line-height: 36px;
+    vertical-align: top;
+}
+
+/*四个边角*/
+.divBg {
+    position: relative;
+}
+.divBg .lt, .divBg .rt, .divBg .lb, .divBg .rb {
+    display: block;
+    width: 55px;
+    height: 55px;
+    position: absolute;
+    z-index: 10000;
+    background: url(/static/img/divBg.png) left top no-repeat;
+}
+.divBg .lt {
+    top: -15px;
+    left: -20px;
+    background-position: 0 0;
+}
+.divBg .rt {
+    top: -15px;
+    right: -18px;
+    background-position: -55px 0;
+}
+.divBg .lb {
+    bottom: -15px;
+    left: -20px;
+    background-position: 0 -55px;
+}
+.divBg .rb {
+    bottom: -15px;
+    right: -18px;
+    background-position: -55px -55px;
+}

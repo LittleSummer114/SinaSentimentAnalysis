@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>EventGraph</title>
+<!--
+        {% load staticfiles %}
+        <script type="text/javascript" src="{% static 'js/lib/d3.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/lib/jquery.min.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css//event.css' %}">
+-->
+        
+        <link rel="stylesheet" type="text/css" href="/static/css/basic.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/event.css">
+        </style>
+    </head>
+    <body>
+        <div id="header" class="header">
+            <!-- logo -->
+            <!-- nav -->
+            <div id="navigation" class="navigation">
+                <div id="logo" class="logo">
+                    <a href="{% url 'search_page' %}">
+<!--                        <img src="{% static 'img/logo.png'%}" alt="" class="" height="85">-->
+                        <img src="/static/img/logo.png" alt="" class="" height="85">
+                    </a>
+                </div>
+                <a href="{% url 'search_page' %}" class="nav">
+                检索页面<br>
+                <span class="en">Search</span>
+                </a>
+                <a href="{% url 'category:category_page' %}" class="nav">
+                话题分类<br>
+                <span class="en">Classification</span>
+                </a>
+                <a href="{% url 'introduction_page' %}" class="nav">
+                    系统介绍<br>
+                <span class="en">Introductions</span>
+                </a>
+            </div>
+            <!-- login -->
+        </div>
+        <div class="container">
+            <!-- 第一层：基本信息 -->
+            <div class="originalInfoPanel" id="originalInfoPanel">
+                <div class="leftWindow divBg">
+                	<a class="lt"></a>
+                	<a class="rt"></a>
+                	<a class="lb"></a>
+                	<a class="rb"></a>
+                    <div class = "windowName"> 
+                        基本信息
+                    </div>
+                    <p>话题名</p>
+                    <p>事件名</p>
+                    <p>事件重要程度</p>
+                    <p>事件关注度衰减曲线</p>
+                </div>
+                <div class="rightWindow divBg">
+                	<a class="lt"></a>
+                	<a class="rt"></a>
+                	<a class="lb"></a>
+                	<a class="rb"></a>
+                    <div class = "windowName"> 
+                        话题代表性新闻
+                    </div>
+                </div>
+            </div>
+            <!--演变-->
+            <div class="evolutionPanel" id="evolutionPanel">
+                <div class = "pannelName"> 
+                    话题发展脉络
+                </div>
+                <div class="mainWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            事件演变图
+                        </div>
+                        <!--<center>-->
+                            <!--<div id="EventEvolution"></div>-->
+                            <!--<script type="text/javascript" src="{% static 'js/EventEvolution.js' %}"></script>-->
+                        <!--</center>-->
+                    </div>
+                </div>
+            </div>
+            <!--情感-->
+            <div class="sentimentPanel" id="sentimentPanel">
+                <div class = "pannelName"> 
+                    舆论情感分析
+                </div>
+                <div class="leftWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            事件情感倾向
+                        </div>
+                    </div>
+                </div>
+                <div class="rightWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            情感流图
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--评论-->
+            <div class="commentPanel" id="commentPanel">
+                <div class = "pannelName"> 
+                    话题舆论集合
+                </div>
+                <div class="mainWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            评论
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!--统计-->
+            <div class="areaPanel" id="areaPanel">
+                <div class = "pannelName"> 
+                    <span>用户群体画像刻画</span>
+                </div>
+                <div class="mainWindow divBg">
+                    <a class="lt"></a>
+                    <a class="rt"></a>
+                    <a class="lb"></a>
+                    <a class="rb"></a>
+                    <div class = "main">
+                        <div class = "windowName"> 
+                            地域信息
+                        </div>
+                        <center>
+                            <div id="chinamap"></div>
+<!--
+                            <script type="text/javascript" src="{% static 'js/chinamap.js' %}"></script>
+                            <script type="text/javascript">
+                                bindChinaMapData("{{ tid|safe }}")
+                            </script>
+-->
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" class="footer">
+            <div class = "contact">
+                @CIKE 新闻话题舆情分析系统
+            </div>
+        </div>
+    </body>
+</html>
