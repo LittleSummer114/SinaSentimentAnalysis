@@ -13,7 +13,8 @@ import pandas as pd
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
-from sklearn.grid_search import GridSearchCV
+# from sklearn.grid_search import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 from sklearn.externals import joblib
 import os
 
