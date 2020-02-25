@@ -245,6 +245,7 @@ class SyntacticAnalysis:
         last_word = ''
         for i in range(0, seg_content_length):
             temp_word = seg_content_list[i].split(':',1)
+            print(temp_word)
             current_word = temp_word[0]
             current_flag = temp_word[1][0]
 
