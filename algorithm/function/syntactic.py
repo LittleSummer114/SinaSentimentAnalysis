@@ -70,34 +70,34 @@ class SyntacticAnalysis:
         self.yiwen_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_yiwen.txt'))
         self.yiwen_full_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_yiwen_full.txt'))
         # 获取任指连词
-        self.cc_corpus_list = self.getCorList(ur'data\dict\syn\corpus_cc.txt')
+        self.cc_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_cc.txt'))
         # 获取正反疑问词
-        self.zhengfan_corpus_list = self.getCorList(ur'data\dict\syn\corpus_zhengfan.txt')
+        self.zhengfan_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_zhengfan.txt'))
         # 获取反问疑问词
-        self.fanwen_corpus_list = self.getCorList(ur'data\dict\syn\corpus_fanwen.txt')
+        self.fanwen_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_fanwen.txt'))
         # 标点
-        self.biaodian_corpus_list = self.getCorList(ur'data\dict\syn\corpus_biaodian.txt')
+        self.biaodian_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_biaodian.txt'))
         # 语气词
-        self.yuqici_corpus_list = self.getCorList(ur'data\dict\syn\corpus_yuqici.txt')
+        self.yuqici_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_yuqici.txt'))
         # 获取任指连词
-        self.renzhi_corpus_list = self.getCorList(ur'data\dict\syn\corpus_renzhi.txt')
+        self.renzhi_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_renzhi.txt'))
         # 获取假设连词
-        self.jiashe_corpus_list = self.getCorList(ur'data\dict\syn\corpus_jiashe.txt')
+        self.jiashe_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_jiashe.txt'))
 
         # 获取否定词库, 存放在列表neg_corpus_list中
-        self.fouding_corpus_list = self.getCorList(ur'data\dict\syn\corpus_fouding.txt')
-        self.fouding_full_corpus_list = self.getCorList(ur'data\dict\syn\corpus_fouding_full.txt')
+        self.fouding_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_fouding.txt'))
+        self.fouding_full_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_fouding_full.txt'))
 
         # 获取非否定的词
-        self.unneg_corpus_list = self.getCorList(ur'data\dict\syn\corpus_unneg.txt')
+        self.unneg_corpus_list = self.getCorList(os.path.abspath('data/dict/syn/corpus_unneg.txt'))
 
         # 获取带比例的词典
-        self.yiwen_front_corpus_list = self.getWeightCorList(ur'data\dict\syn\yiwen_front_dict.csv')
-        self.yiwen_after_corpus_list = self.getWeightCorList(ur'data\dict\syn\yiwen_after_dict.csv')
-        self.fouding_front_corpus_list = self.getWeightCorList(ur'data\dict\syn\fouding_front_dict.csv')
-        self.fouding_after_corpus_list = self.getWeightCorList(ur'data\dict\syn\fouding_after_dict.csv')
-        self.combine_yiwen_corpus_list = self.getWeightCorList(ur'data\dict\syn\combine_yiwen_dict.csv')
-        self.combine_fouding_corpus_list = self.getWeightCorList(ur'data\dict\syn\combine_fouding_dict.csv')
+        self.yiwen_front_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/yiwen_front_dict.csv'))
+        self.yiwen_after_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/yiwen_after_dict.csv'))
+        self.fouding_front_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/fouding_front_dict.csv'))
+        self.fouding_after_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/fouding_after_dict.csv'))
+        self.combine_yiwen_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/combine_yiwen_dict.csv'))
+        self.combine_fouding_corpus_list = self.getWeightCorList(os.path.abspath('data/dict/syn/combine_fouding_dict.csv'))
 
     # 获取正确率
     def verify(self):
