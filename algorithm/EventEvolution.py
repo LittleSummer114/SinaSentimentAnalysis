@@ -16,7 +16,7 @@ import random
 class EventEvolution:
     def __init__(self, tid):
         # open database
-        self.conn = MySQLdb.connect(host='localhost', user='root', passwd='jkl;')
+        self.conn = MySQLdb.connect(host='localhost', user='root', passwd='1234')
         self.cursor = self.conn.cursor()
         self.conn.select_db('newsdemo')
         self.cursor.execute('SET NAMES utf8;')
