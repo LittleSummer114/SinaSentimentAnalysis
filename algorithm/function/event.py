@@ -1692,7 +1692,7 @@ class EventEvolution:
 
         output_features_num = 50
         if len(positive_features_list) < 50 or len(negative_features_list) < 50:
-        output_features_num 
+            output_features_num = min(len(positive_features_list), len(negative_features_list))
         # output_f = open(ur'..\static\data\sentiment\positive_features.csv', 'w')
         # output_f.write('feature,count\n')
         # for i in range(0, output_features_num):
@@ -1707,11 +1707,6 @@ class EventEvolution:
 
         positive_features_str = ''
         negative_features_str = ''
-        print(positive_features_list)
-        print(negative_features_list)
-        print(len(positive_features_list))
-        print(len(negative_features_list))
-        exit()
         for i in range(0, output_features_num):
             positive_features_str += ('%s,%d\n' % (positive_features_list[i][0], positive_features_list[i][1]))
             negative_features_str += ('%s,%d\n' % (negative_features_list[i][0], negative_features_list[i][1]))
