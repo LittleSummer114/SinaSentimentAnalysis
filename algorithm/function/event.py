@@ -104,7 +104,7 @@ class EventEvolution:
         self.muti_sentiment_strength_list = []
         self.muti_sentiment_polarity_list = []
 
-        corpus_f = open('data\dict\sentiment_dict.txt')
+        corpus_f = open(os.path.abspath('../data/dict/sentiment_dict.txt'))
         cor_list = corpus_f.readlines()
         for cor_temp in cor_list:
             temp_sen_split_list = cor_temp.split('\t')
@@ -1273,8 +1273,8 @@ class EventEvolution:
             represent_news_list.append(self.news_title_list[id])
             represent_news_comNum_list.append(self.news_commentNum_list[id])
 
-        max_comment_num = 0
-        max_relation_num = 0
+        max_comment_num = 1
+        max_relation_num = 1
         represent_news_weight = []
         for i in range(0, self.represent_news_num):
             if represent_news_comNum_list[i] > max_comment_num:
