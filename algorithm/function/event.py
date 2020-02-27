@@ -3,6 +3,7 @@
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+import os
 
 import MySQLdb
 import time
@@ -78,12 +79,13 @@ class EventEvolution:
     def readSentimentDict(self):
         self.positive_word_list = []
         self.negative_word_list = []
-        input_f = open('data\dict\sentiment_positive.txt')
+        exit()
+        input_f = open(os.path.abspath('./data/dict/sentiment_positive.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.positive_word_list.append(temp_sen.strip())
         input_f.close()
-        input_f = open('data\dict\sentiment_negative.txt')
+        input_f = open(os.path.abspath('./data/dict/sentiment_negative.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.negative_word_list.append(temp_sen.strip())
