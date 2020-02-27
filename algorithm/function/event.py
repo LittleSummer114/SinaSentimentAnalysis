@@ -79,13 +79,13 @@ class EventEvolution:
     def readSentimentDict(self):
         self.positive_word_list = []
         self.negative_word_list = []
-        exit()
-        input_f = open(os.path.abspath('./data/dict/sentiment_positive.txt'))
+        #exit()
+        input_f = open(os.path.abspath('../data/dict/sentiment_positive.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.positive_word_list.append(temp_sen.strip())
         input_f.close()
-        input_f = open(os.path.abspath('./data/dict/sentiment_negative.txt'))
+        input_f = open(os.path.abspath('../data/dict/sentiment_negative.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.negative_word_list.append(temp_sen.strip())
@@ -1691,6 +1691,8 @@ class EventEvolution:
         negative_features_list = sorted(negative_features_dict.iteritems(), key=lambda l:l[1],reverse=True)
 
         output_features_num = 50
+        if len(positive_features_list) < 50 or len(negative_features_list) < 50:
+        output_features_num 
         # output_f = open(ur'..\static\data\sentiment\positive_features.csv', 'w')
         # output_f.write('feature,count\n')
         # for i in range(0, output_features_num):
@@ -1705,6 +1707,11 @@ class EventEvolution:
 
         positive_features_str = ''
         negative_features_str = ''
+        print(positive_features_list)
+        print(negative_features_list)
+        print(len(positive_features_list))
+        print(len(negative_features_list))
+        exit()
         for i in range(0, output_features_num):
             positive_features_str += ('%s,%d\n' % (positive_features_list[i][0], positive_features_list[i][1]))
             negative_features_str += ('%s,%d\n' % (negative_features_list[i][0], negative_features_list[i][1]))
