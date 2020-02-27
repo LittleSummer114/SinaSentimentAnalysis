@@ -111,7 +111,7 @@ class Preprocess:
     # 读取停词表
     def readStopword(self):
         self.stopword_list = []
-        input_f = open(os.path.abspath('data\dict\stopWord.txt'))
+        input_f = open(os.path.abspath('data/dict/stopWord.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.stopword_list.append(temp_sen.strip())
