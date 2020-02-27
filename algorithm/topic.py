@@ -11,13 +11,13 @@ class TopicAnalysis:
         print 'self.topic_id:', self.topic_id
 
         # 数据预处理：分词、句法分析
-        Preprocess(tid)
+        #Preprocess(tid)
 
         # 句法分析
         #SyntacticAnalysis(tid)
 
         # 统计分析
-        #EventEvolution(tid)
+        EventEvolution(tid)
         # 句法分析
 
 if __name__ == "__main__":
