@@ -87,7 +87,7 @@ class Transformer:
                 continue_flag = False
             print '正在处理第%d篇文档' % the_index
 
-            input_file = ur'..\data\chaifen\%d.txt' % the_index
+            input_file = 'data\chaifen\%d.txt' % the_index
             try:
                 input_f = open(input_file)
             except:
@@ -115,7 +115,7 @@ class Transformer:
                     trans_content += content_line.strip()
 
                 print '哈工大句法分析完毕, 现在写入'
-                output_file = ur'..\data\chaifen_ltp\%d.txt' % the_index
+                output_file = 'data\chaifen_ltp\%d.txt' % the_index
                 output_f = open(output_file, 'w')
                 output_f.write('%s' % trans_content)
                 output_f.close()
@@ -129,7 +129,7 @@ class Transformer:
         chaifen_number = 15
 
         print '正在处理第%d篇文档-异常' % index
-        input_file = ur'..\data\chaifen\%d.txt' % index
+        input_file = 'data\chaifen\%d.txt' % index
         input_f = open(input_file)
         sentences= input_f.readlines()
 
@@ -176,7 +176,7 @@ class Transformer:
         trans_content = u'[' + trans_content[:-1] + u']'
         print trans_content
         print '哈工大句法分析完毕, 现在写入'
-        output_file = ur'..\data\chaifen_ltp\%d.txt' % index
+        output_file = 'data\chaifen_ltp\%d.txt' % index
         output_f = open(output_file, 'w')
         output_f.write('%s' % trans_content)
         output_f.close()
@@ -188,7 +188,7 @@ class Transformer:
                 continue_flag = False
             print '正在处理第%d篇文档' % the_index
 
-            input_file = ur'..\data\chaifen\%d.txt' % the_index
+            input_file = 'data\chaifen\%d.txt' % the_index
             input_f = open(input_file)
             the_content = ''
             trans_content = ''
@@ -220,7 +220,7 @@ class Transformer:
 
             print '哈工大句法分析完毕, 现在写入'
 
-            output_file = ur'..\data\chaifen_ltp\%d.txt' % the_index
+            output_file = 'data\chaifen_ltp\%d.txt' % the_index
             output_f = open(output_file, 'w')
             output_f.write('%s' % trans_content)
             output_f.close()

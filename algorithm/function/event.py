@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
@@ -27,9 +26,9 @@ class EventEvolution:
         self.date_length = 86400
 
         # insert
-        # insert_sql = 'insert result_topic values(%d,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)' % self.topic_id
-        # self.cursor.execute(insert_sql)
-        # self.conn.commit()
+        #insert_sql = 'insert result_topic values(%d,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null)' % self.topic_id
+        #self.cursor.execute(insert_sql)
+        #self.conn.commit()
 
         # read data 必需的
         self.readNews()
@@ -47,7 +46,7 @@ class EventEvolution:
         if 1:
             self.readSentimentDict()
             self.sentimentAnalyze()
-            # self.sentimentDayCount()
+            self.sentimentDayCount()
             self.getPosNegFeatures()
 
         if 1:
@@ -67,7 +66,7 @@ class EventEvolution:
 
         # 关系分析
         if 1:
-            # self.readContentDependenceAnalysis()
+            #self.readContentDependenceAnalysis()
             self.contentDependenceAnalysis()
             self.eventReferenceAnalysis()
             self.temporalProximityAnalysis()
@@ -79,12 +78,12 @@ class EventEvolution:
     def readSentimentDict(self):
         self.positive_word_list = []
         self.negative_word_list = []
-        input_f = open(ur'..\data\dict\sentiment_positive.txt')
+        input_f = open('data\dict\sentiment_positive.txt')
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.positive_word_list.append(temp_sen.strip())
         input_f.close()
-        input_f = open(ur'..\data\dict\sentiment_negative.txt')
+        input_f = open('data\dict\sentiment_negative.txt')
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.negative_word_list.append(temp_sen.strip())
@@ -103,7 +102,7 @@ class EventEvolution:
         self.muti_sentiment_strength_list = []
         self.muti_sentiment_polarity_list = []
 
-        corpus_f = open(ur'..\data\dict\sentiment_dict.txt')
+        corpus_f = open('data\dict\sentiment_dict.txt')
         cor_list = corpus_f.readlines()
         for cor_temp in cor_list:
             temp_sen_split_list = cor_temp.split('\t')
@@ -151,7 +150,6 @@ class EventEvolution:
         self.news_url_list = []
         self.news_leader_list = []
 
-
         # open database
         search_sql = "select * from crawl_news where topic_id = %d" % self.topic_id
         self.cursor.execute(search_sql)
@@ -168,7 +166,7 @@ class EventEvolution:
                     sec_time = int(time.mktime(str_time))
                 except:
                     continue
-                if sec_time < 1462032000:
+                if sec_time < 1581091200:
                     self.news_times_list.append(0)
                 else:
                     self.news_times_list.append(sec_time)
@@ -192,7 +190,7 @@ class EventEvolution:
         # self.conn.commit()
         # self.conn.close()
 
-        print "total news number : ", self.news_count
+        print "total news number : ", self.news_count,len(self.news_times_list)
 
     # 2.读取评论
     def readComments(self):
@@ -215,7 +213,7 @@ class EventEvolution:
         #情感类型
         self.comment_sentiment_list = []
 
-        search_sql = "select * from crawl_comment where topic_id = %d" % self.topic_id
+        search_sql = "select * from crawl_comment where topic_id = %d limit 100" % self.topic_id
         self.cursor.execute(search_sql) # where id < 10
         results = self.cursor.fetchall()
 
@@ -241,31 +239,31 @@ class EventEvolution:
         self.comment_posTaging_list = []
         self.comment_tagLabel_list = []
 
-        search_sql = "select id,pos_tagging,tag_label from preprocess_comment where topic_id = %d" % self.topic_id
+        search_sql = "select id,pos_tagging,tag_label from preprocess_comment where topic_id = %d limit 100" % self.topic_id
         self.cursor.execute(search_sql) # where id < 10
         results = self.cursor.fetchall()
 
         index = 0
+        print "self.comment_id",self.comment_id
+        print "results",results
+        print(self.comment_count)
         for i in range(0, self.comment_count):
             if self.comment_id[i] == results[index][0]:
-                # self.comment_body_list.append(com[1])
+                self.comment_body_list.append(com[1])
                 self.comment_posTaging_list.append(results[index][1])
                 self.comment_tagLabel_list.append(int(results[index][2]))
                 index += 1
             else:
                 self.comment_posTaging_list.append('')
                 self.comment_tagLabel_list.append(-1)
-
-        # self.cursor.close()
-        # self.conn.commit()
-        # self.conn.close()
-
+        #self.cursor.close()
+        self.conn.commit()
+        #self.conn.close()
         print "total comment number : ", self.comment_count
 
     # 3.基本时间统计
     def baseCount(self):
         print "Process 3: base time count"
-
 
         # get the base time
         min_time = self.news_times_list[0]
@@ -276,8 +274,8 @@ class EventEvolution:
             elif self.news_times_list[i] < min_time and self.news_times_list[i] != 0:
                 min_time = self.news_times_list[i]
 
-        # print min_time,max_time
-        # min_time = max_time - 3600*24*10
+        print 'min',min_time,max_time
+        #min_time = max_time - 3600*24*10
         print time.localtime(min_time)
         print time.localtime(max_time)
 
@@ -292,18 +290,17 @@ class EventEvolution:
         str_time_e = time.strftime("%Y-%m-%d",time.localtime(max_time))
 
         update_sql = "update topic_list set Date = '%s - %s' where id = %d" % (str_time_s.encode('utf-8'), str_time_e.encode('utf-8'), self.topic_id)
+        print(update_sql)
         self.cursor.execute(update_sql)
         self.conn.commit()
 
-
-        # update_sql = "update topic_list set abstract = '%s', status = '%s', influence = '%d'" % ('熔断机制摘要', '结束',98)
-        # self.cursor.execute(update_sql)
-        # self.conn.commit()
+        update_sql = "update topic_list set abstract = '%s', status = '%s', influence = '%d'" % ('熔断机制摘要', '结束',98)
+        self.cursor.execute(update_sql)
+        self.conn.commit()
 
     # 4.按天统计
     def dayCount(self):
         print "Process 4: comments and news' day count"
-
         # day count
         self.comment_day_count = []
         self.news_day_count = []
@@ -337,14 +334,14 @@ class EventEvolution:
             self.news_dayIndex_list[i] = day
 
         # 输出统计
-        # output_f = open(ur'..\static\data\dayCount\day_count.csv', 'w')
-        # index = 0
-        # output_f.write('date,news_num,comment_num\n')
-        # for i in range(0, self.total_day):
-        #     sec_time = self.base_time + self.date_length*i
-        #     str_time = time.strftime("%Y-%m-%d",time.localtime(sec_time))
-        #     output_f.write('%s,%s,%s\n' % (str_time, self.news_day_count[i], self.comment_day_count[i]))
-        # output_f.close()
+        output_f = open('..\static\data\dayCount\day_count.csv', 'w')
+        index = 0
+        output_f.write('date,news_num,comment_num\n')
+        for i in range(0, self.total_day):
+            sec_time = self.base_time + self.date_length*i
+            str_time = time.strftime("%Y-%m-%d",time.localtime(sec_time))
+            output_f.write('%s,%s,%s\n' % (str_time, self.news_day_count[i], self.comment_day_count[i]))
+        output_f.close()
 
         # 写入数据库
         date_count_str = ''
@@ -375,7 +372,6 @@ class EventEvolution:
             else:
                 self.heat_day_list.append((self.news_day_count[i] * 5 + self.news_day_count[i-1] + self.news_day_count[i+1] \
                                             + (self.comment_day_count[i] * 5 + self.comment_day_count[i+1]+ self.comment_day_count[i-1])/percent)/7.0)
-
 
         self.status_list = []
         max_index = 0
@@ -501,7 +497,6 @@ class EventEvolution:
         # 重新计算代表性新闻篇数
         self.represent_news_num = len(self.represent_news_index)
         print 'represent_news_num ', self.represent_news_num
-
 
         # output_f = open(ur'..\data\represent_news.csv', 'w')
         # index = 0
@@ -1612,10 +1607,12 @@ class EventEvolution:
         self.sentiment_day_count = []
         for i in range(0, self.total_day):
             self.sentiment_day_count.append([0,0,0])
-
+        print(self.sentiment_day_count)
         # 评论的统计
         for i in range(0, self.comment_count):
             day = (self.comment_time_list[i] - self.base_time)/86400
+            if day<0:
+                day = 1
             if self.comment_sentiment_list[i] > 0:
                 self.sentiment_day_count[day][0] += 1
             elif self.comment_sentiment_list[i] < 0:
@@ -1623,9 +1620,8 @@ class EventEvolution:
             else:
                 self.sentiment_day_count[day][2] += 1
 
-
         # 输出统计
-        output_f = open(ur'..\static\data\sentiment\sentiment_day_count.csv', 'w')
+        output_f = open('..\static\data\sentiment\sentiment_day_count.csv', 'w')
         index = 0
         for i in range(0, self.total_day):
             sec_time = self.base_time + 86400*i
@@ -1730,13 +1726,10 @@ class EventEvolution:
     def mutiSentimentAnalyze(self):
         print 'Process s5: sentiment analysis use 7 category'
 
-
         whole_sentiment_value = []
         total_sentiment_value = [0,0,0,0,0,0,0]
         for i in range(0, self.total_day):
             whole_sentiment_value.append([0,0,0,0,0,0,0])
-
-
 
         for i in range(0, self.comment_count):
             if i % 500 == 0:
@@ -1785,6 +1778,5 @@ class EventEvolution:
         self.cursor.execute(update_sql)
         self.conn.commit()
 
-
 if __name__ == "__main__":
-    test = EventEvolution(2)
+    test = EventEvolution(3)

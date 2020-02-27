@@ -10,7 +10,7 @@ sys.setdefaultencoding('utf-8')
 
 
 def CreateDataBase():
-    conn = MySQLdb.connect(host='localhost', user='root', passwd='1234')
+    conn = MySQLdb.connect(host='localhost', user='root', passwd='123456')
 
     # creat database
     conn.set_character_set('utf8')
@@ -23,16 +23,16 @@ def CreateDataBase():
     # cursor.execute("create database if not exists topicdemo charset utf8 COLLATE utf8_general_ci")
 
     # select database
-    # conn.select_db('topicdemo')
+    conn.select_db('topicdemo')
     # cursor.execute("create table preprocess_news (id int primary key, topic_id int, news_body text, pos_tagging text) ")
     # cursor.execute("create table preprocess_comment (id int primary key, topic_id int, comment_body text, pos_tagging text, syntactic text, pv_word text, pv_modifier_word text, keywords text, tag_label int, sentiment_value int) ")
     # cursor.execute("create table result_topic (topic_id int primary key, date_info text, date_count text, status_info text, event_info text, event_edge text, event_node text, entity_name text, entity_event text, entity_profile text,  heatmap_data text, feature_frequent text, feature_positive text, feature_negative text, sentiment_stream text, sentiment_piechart text, news_top text, comment_best text, comment_top text, comment_famous text, comment_question text, area_info text)")
     # cursor.execute("alter table result_topic add column status_info text;")
     # cursor.execute("alter table topicdemo.result_topic change column enetiy_name entity_name text;")
-    # cursor.execute("alter table result_topic add column cd_value text;")
-    # cursor.execute("alter table result_topic add column er_value text;")
-    # cursor.execute("alter table result_topic add column tp_value text;")
-    # cursor.execute("alter table result_topic add column tem_value text;")
+    cursor.execute("alter table result_topic add column cd_value text;")
+    cursor.execute("alter table result_topic add column er_value text;")
+    cursor.execute("alter table result_topic add column tp_value text;")
+    cursor.execute("alter table result_topic add column tem_value text;")
 
     # cursor.execute("alter table crawl_news change column id id int auto_increment primary key;")
     # cursor.execute("alter table crawl_comment change column id id int auto_increment primary key;")
@@ -73,8 +73,8 @@ def CreateDataBase():
     # cursor.execute("alter table syntactic_news add column topic_id int not null;")
     # cursor.execute("alter table syntactic_comment add column topic_id int not null;")
 
-    # cursor.execute("create table topic_list (id int primary key, topic_name varchar(100), keyword text, topic_type int)")
-    # cursor.execute("insert into topic_list values(0, %s,%s,%s)", ('熔断机制', '熔断,肖刚', 0))
+    #cursor.execute("create table topic_list (id int primary key, topic_name varchar(100), keyword text, topic_type int)")
+    #cursor.execute("insert into topic_list values(3, %s,%s,%s)", ('抗击肺炎', '疫情,肺炎', 0))
 
     # search_info = u'熔断机制'
     # sql_str = "select * from original_url"

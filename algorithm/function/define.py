@@ -1,6 +1,6 @@
 import os
 def ReadConf():
-    input_f = open(os.path.abspath('../static/conf/system.conf'))
+    input_f = open(os.path.abspath('D:\Downloads\SinaSentimentAnalysis-master\SinaSentimentAnalysis-master\static\conf\system.conf'))
     sen_list = input_f.readlines()
     for temp_sen in sen_list:
         if 'HostName=' in temp_sen:

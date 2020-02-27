@@ -78,14 +78,15 @@ class repTool():
 class Preprocess:
     def __init__(self, tid):
         # open database
-        hostname, hostport, username, passwdname, dbname = ReadConf()
-        self.conn = MySQLdb.connect(host=hostname, user=username, passwd=passwdname)
+        #hostname, hostport, username, passwdname, dbname = ReadConf()
+
+        self.conn = MySQLdb.connect(host="localhost", user="root", passwd="123456")
         self.conn.set_character_set('utf8')
         self.cursor = self.conn.cursor()
         self.cursor.execute('SET NAMES utf8;')
         self.cursor.execute('SET CHARACTER SET utf8;')
         self.cursor.execute('SET character_set_connection=utf8;')
-        self.conn.select_db(dbname)
+        self.conn.select_db("topicdemo")
 
         self.total_chaifen_num = 0
 
@@ -98,19 +99,19 @@ class Preprocess:
         # 处理函数
         self.readStopword()
 
-        # self.readNews()
-        # self.newsPosTaging()
+        #self.readNews()
+        #self.newsPosTaging()
 
-        # self.readComments()
-        # self.commentPosTaging()
+        self.readComments()
+        #self.commentPosTaging()
 
         self.getLtpResults()
-        # self.updateLtpResults()
+        self.updateLtpResults()
 
     # 读取停词表
     def readStopword(self):
         self.stopword_list = []
-        input_f = open(os.path.abspath('data/dict/stopWord.txt'))
+        input_f = open(os.path.abspath('data\dict\stopWord.txt'))
         sen_list = input_f.readlines()
         for temp_sen in sen_list:
             self.stopword_list.append(temp_sen.strip())
@@ -182,7 +183,7 @@ class Preprocess:
         self.comment_id_list = []
         self.comment_body_list = []
 
-        self.cursor.execute("select id, comment_body from crawl_comment where topic_id=%s" % self.topic_id) # where id < 10
+        self.cursor.execute("select id, comment_body from crawl_comment where topic_id=%s limit 100" % self.topic_id) # where id < 10
         results = self.cursor.fetchall()
 
         for com in results:
@@ -190,13 +191,13 @@ class Preprocess:
             self.comment_body_list.append(self.rep_tool.replace_comment(com[1].strip()))
             self.comment_count += 1
         print "total comment number : ", self.comment_count
-
-
+        
         # 拆分数据集，用于哈工大的分析
         file_index = 0
         file_length = 0
         os.system('del ..\data\chaifen\*.txt')
-        output_file = ur'..\data\chaifen\%d.txt' % file_index
+        #input_f = open(os.path.abspath('data\dict\stopWord.txt'))
+        output_file = 'data\chaifen\%d.txt' % file_index
         output_f = open(output_file, 'w')
         self.total_chaifen_num = 1
         for i in range(0, self.comment_count):
@@ -205,7 +206,7 @@ class Preprocess:
                 output_f.close()
                 file_length = 0
                 file_index += 1
-                output_file = ur'..\data\chaifen\%d.txt' % file_index
+                output_file = 'data\chaifen\%d.txt' % file_index
                 output_f = open(output_file, 'w')
                 self.total_chaifen_num += 1
             output_f.write('%s\n' % self.comment_body_list[i])
@@ -237,7 +238,7 @@ class Preprocess:
             if i % 500 == 0:
                 print i
             insert_sql = "insert into preprocess_comment values (%s,%d,'%s','%s',null,null,null,null,-1,0,null)" % (self.comment_id_list[i], self.topic_id, self.comment_body_list[i].encode('utf-8'), posTaging_list[i].encode('utf-8'))
-            # print insert_sql
+            print insert_sql
             try:
                 self.cursor.execute(insert_sql)
             except:
@@ -253,21 +254,21 @@ class Preprocess:
     # 获取哈工大句法分析结果
     def getLtpResults(self):
         print 'Preprocess 3: get ltp results'
-        # os.system('del ..\data\chaifen_ltp\*.txt')
+        os.system('del ..\data\chaifen_ltp\*.txt')
 
         transformer = Transformer()
         # 对每一篇文档使用哈工大分词, 并存入对应序号的文件(dataFolder\mydata\pre\chaifen_ltp)中
         # 每一篇文档为多条文本的集合, 一行为一条文本
         transformer.transMyTestSet(
-            the_index=16,
-            the_end=440,
+            the_index=0,
+            the_end=450,
             # the_end=self.total_chaifen_num
         )
 
         # 查看哈工大分词存入的文件
         count = 0
-        for i in range(0, 30):
-            input_file_name =  os.path.abspath('data/chaifen_ltp/%d.txt' % i)
+        for i in range(0, 1):
+            input_file_name =  os.path.abspath('data/chaifen_ltp/0.txt')
             count += transformer.lookFile(
                 input_file= input_file_name
             )
@@ -283,7 +284,7 @@ class Preprocess:
         for i in range(0, self.ltp_file_num):
             if i % 25 ==0:
                 print i
-            input_file = ur'..\data\chaifen_ltp\%d.txt' % i
+            input_file = 'data\chaifen_ltp\%d.txt' % i
             try:
                 input_f = open(input_file)
                 for file_line in input_f:
@@ -314,6 +315,5 @@ class Preprocess:
                 print i
         self.conn.commit()
 
-
 if __name__ == "__main__":
-    test = Preprocess(2)
+    test = Preprocess(3)
